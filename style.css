@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,900&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    margin: 0;
+}
+.container {
+    height: 100vh;
+    width: 95.85vw;
+    display: flex;
+    padding-left: 4rem;
+    align-items: center;
+}
+.info-display {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+/* weather display */
+.weather {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.weather-div {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+.icon {
+    height: 9vh;
+    width: 6vw;
+    padding-right: 5px;
+}
+h1 {
+    margin: 0 10px;
+}
+/* form */
+fieldset, input, button {
+    border: none;
+}
+fieldset {
+    margin: 0;
+}
+input {
+    height: 30px;
+    border-radius: 20px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.647);
+}
+button {
+    height: 30px;
+    width: 100px;
+    background-color: rgba(236, 42, 32, 0.647);
+    border-radius: 20px;
+}
+/* toggle button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin: 0px 10px;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.416);
+    transition: .4s;
+    border-radius: 24px;
+    color: black;
+}
+.switch input {
+    opacity: 0;
+}
+.slider:before {
+    position: absolute;
+    content: 'C';
+    height: 72%;
+    width: 36%;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 900;
+    color: grey;
+}
+input:checked+.slider {
+    background-color: rgba(236, 42, 32, 0.416);
+}
+input:checked+.slider:before {
+    transform: translateX(27px);
+    content: 'F';
+    text-align: center;
+}
+.current-temp {
+    display: flex;
+    font-size: 3rem;
+    font-weight: 800;
+}
+#temp {
+    height: 30px;
+    width: auto;
+}
+.more-info {
+    font-size: 1.3rem;
+}

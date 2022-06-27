@@ -11,25 +11,48 @@
 <body>
 <div class="container">
 <div class="info-display">
-    <div class="country">Weather for:</div>
-    <div class="weather-div">
-        <h1 id="weather">Cloudy</h1>
+    <div class="weather">
+        <div class="weather-div">
+            <div class="icon">
+            </div>
+            <h1 id="weather">Cloudy</h1>
+        </div>
+        <div class="country">Weather for:</div>
+        <div class="date"></div>
     </div>
-    <div class="date"></div>
-    <div class="form">
-        <form action="" method="post">
-            <fieldset class="style-form">
-                <label for="city-name">Enter city:</label>
-                <input type="text" id="city-name">
-                <button type="submit">Submit</button>
-            </fieldset>
-        </form>
+    <div class="input">
+        <div class="form">
+            <form action="" method="post">
+                <fieldset class="style-form">
+                    <label for="city-name"></label>
+                    <input type="text" id="city-name" placeholder="Enter country name">
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="unit-disp">
+            <label class="switch">
+                <input type="checkbox" value="0">
+                    <span class="slider"></span>
+            </label>
+        </div>
     </div>
-    <div class="unit-disp"></div>
     <div class="temp-div">
-        <div class="temp"></div>
-        <div class="min-temp"></div>
-        <div class="max-temp">    </div>
+        <div class="current-temp">
+            <div class="temp-icon">
+                <img src="./img/temperature-512.png" id="temp" alt="">
+            </div>
+            <div class="temp"></div>
+        </div>
+        <div class="minmax">
+            <div class="min-temp"></div>
+            <div class="max-temp"></div>
+        </div>
+    </div>
+    <div class="more-info">
+        <div class="feels-like"></div>
+        <div class="humidity"></div>
+        <div class="wind"></div>
     </div>
 </div>
 </div>

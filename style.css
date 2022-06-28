@@ -89,6 +89,9 @@ button {
 .slider:before {
     position: absolute;
     content: 'C';
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 72%;
     width: 36%;
     left: 5px;

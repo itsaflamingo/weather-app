@@ -37,6 +37,11 @@ h1 {
     margin: 0 10px;
 }
 /* form */
+form, fieldset {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
 fieldset, input, button {
     border: none;
 }
@@ -55,13 +60,16 @@ button {
     background-color: rgba(236, 42, 32, 0.647);
     border-radius: 20px;
 }
+.error {
+    font-size: 12px;
+}
 /* toggle button */
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 30px;
-    margin: 0px 10px;
+    margin: 20px 0;
 }
 .slider {
     position: absolute;

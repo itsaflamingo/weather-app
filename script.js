@@ -3,7 +3,8 @@ const submit = document.querySelector('button');
 const checkbox = document.querySelector("input[type='checkbox']");
 const form = document.querySelector('form');
 submit.addEventListener('click', (e) => search(e));
-  checkbox.addEventListener('change', () => {
+  
+checkbox.addEventListener('change', () => {
      checkbox.value = checkbox.checked ? 1 : 0;
   });
 
@@ -11,11 +12,14 @@ function search(e) {
     e.preventDefault()
     let unit;
     const input = document.querySelector('input').value;
+    const error = document.querySelector('.error');
 
-    if(checkbox.value === null || checkbox.value === '0') unit = '&units=metric'
+    if(checkbox.value === null || checkbox.value === '0' || checkbox.value === undefined) unit = '&units=metric'
     else if(checkbox.value === '1') unit = '&units=imperial'
     
-    fetchWeatherData(`http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=775f80930103eb948ca48290efbf90f1${unit}`);
+    fetchWeatherData(`http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=775f80930103eb948ca48290efbf90f1${unit}`).catch(err => {
+        error.innerHTML = `Location not found. Search must be in the form of "City", "City, State" or "City, Country".        `
+    });
     form.reset();
 }
 

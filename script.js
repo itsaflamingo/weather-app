@@ -17,7 +17,7 @@ function search(e) {
     if(checkbox.value === null || checkbox.value === '0' || checkbox.value === undefined) unit = '&units=metric'
     else if(checkbox.value === '1') unit = '&units=imperial'
     
-    fetchWeatherData(`http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=775f80930103eb948ca48290efbf90f1${unit}`).catch(err => {
+    fetchWeatherData(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=775f80930103eb948ca48290efbf90f1${unit}`).catch(err => {
         error.innerHTML = `Location not found. Search must be in the form of "City", "City, State" or "City, Country".        `
     });
     form.reset();
@@ -29,7 +29,7 @@ async function fetchWeatherData(link) {
 
     facFun(weatherData);
 }
-fetchWeatherData('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=775f80930103eb948ca48290efbf90f1&units=metric');
+fetchWeatherData('https://api.openweathermap.org/data/2.5/weather?q=London&APPID=775f80930103eb948ca48290efbf90f1&units=metric');
 
 const facFun = (weatherData) => {
     let data = {

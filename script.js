@@ -4,18 +4,25 @@ const checkbox = document.querySelector("input[type='checkbox']");
 const form = document.querySelector('form');
 submit.addEventListener('click', (e) => search(e));
   
-checkbox.addEventListener('change', () => {
+checkbox.addEventListener('change', (e) => {
      checkbox.value = checkbox.checked ? 1 : 0;
+
+     search(e);   
   });
 
 function search(e) {
     e.preventDefault()
-    let unit;
-    const input = document.querySelector('input').value;
+    let input = document.querySelector('input').value;
     const error = document.querySelector('.error');
+    const cityDiv = document.querySelector('.country').innerHTML;
 
     if(checkbox.value === null || checkbox.value === '0' || checkbox.value === undefined) unit = '&units=metric'
     else if(checkbox.value === '1') unit = '&units=imperial'
+
+    if(input === null || input === undefined || input === "") {
+        const city = cityDiv.split(' ').pop();
+        input = city
+    };
     
     fetchWeatherData(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=775f80930103eb948ca48290efbf90f1${unit}`).catch(err => {
         error.innerHTML = `Location not found. Search must be in the form of "City", "City, State" or "City, Country".        `
@@ -103,10 +110,10 @@ const display = (data) => {
     }
 
     if(weatherDisplay === 'Rain' || weatherDisplay === 'Thunderstorm') {
-        container.style.backgroundImage = 'url(img/rainy.webp)';
+        container.style.backgroundImage = 'url(img/rainy.jpg)';
         container.style.backgroundColor = 'rgba(255,255,255,0.15)'
         container.style.backgroundRepeat = 'no-repeat';
-        container.style.backgroundSize = 'cover';
+        container.style.backgroundSize = '120% 100%';
         container.style.backgroundBlendMode = 'lighten';
         container.style.color = 'rgb(255, 255, 255)'
 

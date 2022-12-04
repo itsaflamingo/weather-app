@@ -116,6 +116,10 @@ input:checked+.slider:before {
     font-size: 3rem;
     font-weight: 800;
 }
+.temp-icon {
+    height: 50px;
+    width: 50px;
+}
 #temp {
     height: 30px;
     width: auto;
